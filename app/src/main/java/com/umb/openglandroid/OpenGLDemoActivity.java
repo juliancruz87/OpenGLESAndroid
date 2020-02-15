@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.opengl.GLSurfaceView;
+import android.view.ViewGroup;
+import android.widget.EditText;
 
 public class OpenGLDemoActivity extends Activity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         // Go fullscreen
@@ -18,6 +21,10 @@ public class OpenGLDemoActivity extends Activity {
 
         GLSurfaceView view = new GLSurfaceView(this);
         view.setRenderer(new GLCanvasRenderer());
-        setContentView(view); // previous view. R.layout.activity_main
+        setContentView(view);
+
+        EditText editBox = new EditText(this);
+        editBox.setText("Hello World: The Spinning Cube at OpenGLES 2.0");
+        addContentView(editBox, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
     }
 }

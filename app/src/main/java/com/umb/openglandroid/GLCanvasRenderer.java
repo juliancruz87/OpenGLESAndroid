@@ -16,7 +16,7 @@ public class GLCanvasRenderer implements Renderer
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config)
     {
-        gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
+        gl.glClearColor(1.0f, 1.0f, 0.0f, 0.5f);
 
         gl.glClearDepthf(1.0f);
         gl.glEnable(GL10.GL_DEPTH_TEST);
