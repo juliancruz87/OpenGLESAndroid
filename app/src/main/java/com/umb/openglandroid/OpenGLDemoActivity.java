@@ -14,12 +14,10 @@ public class OpenGLDemoActivity extends Activity {
 
         // Go fullscreen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         GLSurfaceView view = new GLSurfaceView(this);
-        //view.setRenderer(new OpenGLRenderer());
-
-        setContentView(R.layout.activity_main);
+        view.setRenderer(new GLCanvasRenderer());
+        setContentView(view); // previous view. R.layout.activity_main
     }
 }
