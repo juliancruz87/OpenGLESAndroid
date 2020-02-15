@@ -1,4 +1,4 @@
-package com.example.openglandroid;
+package com.umb.openglandroid;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.openglandroid;
+package com.umb.openglandroid;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.openglandroid", appContext.getPackageName());
+        assertEquals("com.umb.openglandroid", appContext.getPackageName());
     }
 }
