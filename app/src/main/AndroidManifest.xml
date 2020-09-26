@@ -9,6 +9,7 @@
    I'm going to use the older version 2.0 then I'll try to upgrade it to 3.1
    TODO:upgrade this version to 3.1
     -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />

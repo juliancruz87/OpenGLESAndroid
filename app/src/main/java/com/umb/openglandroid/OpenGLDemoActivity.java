@@ -10,7 +10,7 @@ import android.content.Intent;
 public class OpenGLDemoActivity extends Activity
 {
     /** Duration of wait **/
-    private final int SPLASH_DISPLAY_LENGTH = 3000;
+    private final int SPLASH_DISPLAY_LENGTH = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,10 +28,10 @@ public class OpenGLDemoActivity extends Activity
             @Override
             public void run()
             {
-                /* Create an Intent that will start the Menu-Activity. */
+                /* Create an Intent that will start the Home-Activity. */
                 Intent mainIntent = new Intent(OpenGLDemoActivity.this, HomeActivity.class);
                 OpenGLDemoActivity.this.startActivity(mainIntent);
-                OpenGLDemoActivity.this.finish();
+                OpenGLDemoActivity.this.finish(); // this is to prevent back button to access splash screen again.
             }
         }, SPLASH_DISPLAY_LENGTH);
     }
