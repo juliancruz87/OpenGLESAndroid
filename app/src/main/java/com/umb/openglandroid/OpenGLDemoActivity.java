@@ -1,16 +1,16 @@
 package com.umb.openglandroid;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
-import android.opengl.GLSurfaceView;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.content.Intent;
 
-public class OpenGLDemoActivity extends Activity {
+public class OpenGLDemoActivity extends Activity
+{
+    /** Duration of wait **/
+    private final int SPLASH_DISPLAY_LENGTH = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,17 +21,18 @@ public class OpenGLDemoActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        GLSurfaceView view = new GLSurfaceView(this);
-        view.setRenderer(new GLCanvasRenderer());
-        setContentView(view);
+        setContentView(R.layout.activity_main);
 
-        EditText editBox = new EditText(this);
-        editBox.setText("Hello World: The Spinning Cube at OpenGLES 2.0");
-        addContentView(editBox, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-
-
-        Context context = getApplicationContext();
-        String msg = getApplicationInfo().packageName;
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT * 5).show();
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                /* Create an Intent that will start the Menu-Activity. */
+                Intent mainIntent = new Intent(OpenGLDemoActivity.this, HomeActivity.class);
+                OpenGLDemoActivity.this.startActivity(mainIntent);
+                OpenGLDemoActivity.this.finish();
+            }
+        }, SPLASH_DISPLAY_LENGTH);
     }
 }
