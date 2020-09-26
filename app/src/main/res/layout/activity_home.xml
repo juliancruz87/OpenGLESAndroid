@@ -7,39 +7,80 @@
     android:background="@color/colorAccent"
     tools:context=".HomeActivity">
 
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="412dp"
-        android:layout_height="330dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="2dp" />
-
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="408dp"
-        android:layout_height="58dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/webView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="2dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button_umb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="UMB" />
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="412dp"
+            android:layout_height="330dp"
+            tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/button_umb_virtual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="UMB Virtual" />
+        </WebView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="408dp"
+            android:layout_height="58dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/button_umb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="UMB" />
+
+            <Button
+                android:id="@+id/button_umb_virtual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="UMB Virtual" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="409dp"
+            android:layout_height="330dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/webSiteLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="https://www.google.com.co"/>
+
+            <Button
+                android:id="@+id/btnLoadSite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ir" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="julian" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberPassword" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loign" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
